@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Portfolio Website</title>
+    
+    <!-- google font icons -->
+    <script src="https://kit.fontawesome.com/b356ad9dc8.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- local css file 
+    <link rel="stylesheet" href="styles.css" />-->
+
+        <style>
+
+            * {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: 0.2s linear;
+            }
+
+            /* css variables */
+            :root {
+            --white: #fff;
+            --dark-gray: #ababab;
+            --light-gray: #808080;
+            --dark-bg: #222222;
+            --light-bg: #333333;
+            --yellow: #bac964;
+            --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+            }
+
+            html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-padding-top: 6rem;
+            }
+
+            html::-webkit-scrollbar {
+            width: 1rem;
+            }
+
+            html::-webkit-scrollbar-track {
+            background: var(--white);
+            }
+
+            html::-webkit-scrollbar-thumb {
+            background: var(--light-bg);
+            }
+
+            body {
+            background-color: var(--dark-bg);
+            }
+
+            section {
+            padding: 5rem 9%;
+            }
+
+            .heading {
+            color: var(--white);
+            font-size: 3rem;
+            font-weight: 200;
+            text-align: center;
+            padding-bottom: 4rem;
+            }
+
+            .heading span {
+            font-weight: 700;
+            }
+
+            .btn {
+            background-color: var(--yellow);
+            font-size: 1.7rem;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            color: var(--white);
+            text-transform: uppercase;
+            margin-right: 1rem;
+            display: inline-block;
+            margin-top: 1rem;
+            }
+
+            /* home */
+            .home {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('p.jpg');
+            filter: grayscale(100%);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            }
+
+            .home .hero-text {
+            font-size: 7rem;
+            color: var(--white);
+            font-weight: 200;
+            line-height: 1.2;
+            }
+
+            .home .hero-text span {
+            font-weight: 800;
+            }
+
+            .home p {
+            color: var(--dark-gray);
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;
+            }
+            /* home */
+
+
+            /* header */
+            .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 5rem 9%;
+            z-index: 100;
+            }
+
+            .header.active {
+            background-color: #814f29;
+            padding: 3rem 9%;
+            }
+
+            .header.active .navbar a {
+            color: var(--dark-bg);
+            }
+
+            .header.active .navbar a:hover {
+            color: var(--yellow);
+            }
+
+            .header.active .menu {
+            color: var(--dark-bg);
+            }
+
+            .header .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+
+            .header .navbar a {
+            font-size: 1.5rem;
+            color: var(--white);
+            padding: 0 2rem;
+            letter-spacing: 0.3rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            }
+
+            .header .menu {
+            font-size: 2.5rem;
+            color: var(--white);
+            cursor: pointer;
+            text-align: left;
+            display: none;
+            }
+        /* header */
+
+
+        /* Project */
+            .portfolio .box-container .box .image {
+            height: 30rem;
+            overflow: hidden;
+            position: relative;
+            }
+
+            .portfolio .box-container .box .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            }
+
+            .portfolio .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 4rem;
+            }
+
+            .portfolio .box-container .box {
+            background-color: var(--light-bg);
+            padding: 1rem;
+            box-shadow: var(--box-shadow);
+            }
+
+            .portfolio .box-container .box:hover .image img {
+            transform: scale(1.2);
+            }
+
+            .portfolio .box-container .box .image .content {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: var(--light-bg);
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(100%);
+            }
+
+            .portfolio .box-container .box .image .content h2 {
+            font-size: 2rem;
+            color: var(--white);
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
+            }
+
+            .portfolio .box-container .box:hover .image .content {
+            transform: translateY(0);
+            }
+        /* portfolio */
+
+
+        /* resume */
+            .resume .col-container .col .box {
+            background-color: var(--light-bg);
+            padding: 2.5rem;
+            margin: 2rem 0;
+            box-shadow: var(--box-shadow);
+            }
+
+            .resume .col-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 4rem;
+            }
+
+            .resume .col-container .col h2 {
+            font-size: 2.5rem;
+            color: var(--white);
+            font-weight: 200;
+            padding-bottom: 2rem;
+            }
+
+            .resume .col-container .col .box span {
+            color: var(--white);
+            font-size: 1.7rem;
+            display: flex;
+            align-items: center;
+            }
+
+            .resume .col-container .col .box span i {
+            padding-right: 0.5rem;
+            font-size: 1.7rem;
+            }
+
+            .resume .col-container .col .box h3 {
+            color: var(--yellow);
+            font-size: 2rem;
+            margin-top: 1rem;
+            font-weight: 400;
+            }
+
+            .resume .col-container .col .box p {
+            font-size: 1.7rem;
+            color: var(--dark-gray);
+            margin-top: 1rem;
+            line-height: 1.5;
+            text-transform: none;
+            }
+
+            .resume .col-container .col .box .university {
+            color: var(--light-gray);
+            text-transform: capitalize;
+            }
+        /* resume */
+
+
+        /* about */
+            .about .box-container .box .image {
+            height: 100%;
+            overflow: hidden;
+            }
+
+            .about .box-container .box .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            }
+
+            .about .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 4rem;
+            }
+
+            .about .box-container .box p {
+            color: var(--dark-gray);
+            margin-bottom: 2rem;
+            font-size: 1.7rem;
+            letter-spacing: 0.1rem;
+            line-height: 1.5;
+            text-transform: none;
+            }
+        /* about */
+
+
+       /* clients */
+            .clients .box-container .box .image {
+            width: 12rem;
+            height: 12rem;
+            overflow: hidden;
+            margin: 0 auto;
+            }
+
+            .clients .box-container .box .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            }
+
+            .clients .box-container .box {
+            text-align: center;
+            background-color: var(--light-bg);
+            padding: 2.5rem;
+            box-shadow: var(--box-shadow);
+            }
+
+            .clients .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 4rem;
+            }
+
+            .clients .box-container .box .content {
+            margin-top: 2rem;
+            }
+
+            .clients .box-container .box .content p:nth-child(1) {
+            font-size: 1.7rem;
+            color: var(--dark-gray);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+            letter-spacing: 0.1rem;
+            text-transform: none;
+            }
+
+            .clients .box-container .box .content p:nth-child(2) {
+            font-style: italic;
+            font-size: 1.5rem;
+            color: var(--light-gray);
+            }
+
+            .clients .box-container .box .content p:nth-child(2) span {
+            color: var(--yellow);
+            font-style: normal;
+            }
+        /* clients */
+        
+
+
+        /* services */
+            .services .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 4rem;
+            }
+
+            .services .box-container .box {
+            background-color: var(--light-bg);
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            }
+
+            .services .box-container .box .icon {
+            font-size: 4rem;
+            color: var(--light-bg);
+            background-color: var(--yellow);
+            padding: 2.5rem;
+            border-radius: 50%;
+            margin-bottom: 2rem;
+            }
+
+            .services .box-container .box h2 {
+            font-size: 2rem;
+            color: var(--white);
+            font-weight: 400;
+            margin-bottom: 2rem;
+            }
+
+            .services .box-container .box p {
+            font-size: 1.7rem;
+            color: var(--dark-gray);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+            text-transform: none;
+            letter-spacing: 0.1rem;
+            }
+
+            .services .box-container .box .btn-2 {
+            font-size: 1.7rem;
+            color: var(--yellow);
+            display: flex;
+            justify-content: center;
+            }
+
+            .services .box-container .box .btn-2:hover i {
+            padding-left: 1.5rem;
+            }
+        /* services */
+
+
+        /* blogs */
+            .blogs .box-container .box .image {
+            height: 30rem;
+            overflow: hidden;
+            }
+
+            .blogs .box-container .box .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            }
+
+            .blogs .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 4rem;
+            }
+
+            .blogs .box-container .box {
+            background-color: var(--light-bg);
+            }
+
+            .blogs .box-container .box .content {
+            padding: 2.5rem;
+            }
+
+            .blogs .box-container .box .content h2 {
+            font-size: 2rem;
+            color: var(--white);
+            font-weight: 400;
+            margin-bottom: 2rem;
+            }
+
+            .blogs .box-container .box .content p {
+            color: var(--dark-gray);
+            margin-bottom: 2rem;
+            font-size: 1.7rem;
+            }
+
+            .blogs .box-container .box .content span {
+            font-size: 1.5rem;
+            color: var(--light-gray);
+            margin-right: 2rem;
+            }
+
+            .blogs .box-container .box .content span i {
+            font-size: 1.7rem;
+            vertical-align: -0.3rem;
+            }
+
+            .blogs .box-container .box .content span:hover {
+            color: var(--yellow);
+            cursor: pointer;
+            }
+        /* blogs */
+
+        /* contact */
+            .contact .col-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+            gap: 6rem;
+            }
+
+            .contact .col-container .col h2 {
+            font-size: 2.5rem;
+            color: var(--white);
+            font-weight: 200;
+            padding-bottom: 5rem;
+            }
+
+            .contact .col-container .col input,
+            .contact .col-container .col textarea {
+            background-color: var(--light-bg);
+            width: 100%;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-size: 1.7rem;
+            color: var(--dark-gray);
+            margin: 0.5rem 0;
+            resize: vertical;
+            }
+
+            .contact .col-container .col p {
+            font-size: 1.7rem;
+            color: var(--yellow);
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            }
+
+            .contact .col-container .col span {
+            font-size: 1.5rem;
+            color: var(--dark-gray);
+            letter-spacing: 0.1rem;
+            }
+        /* contact */
+
+
+        /* footer */
+            .footer {
+            
+            border-top: 0.2rem solid var(--light-bg);
+            text-align: center;
+           
+            }
+            .socials{
+                width: 100%;
+                height: 40vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              
+            }
+
+            .icon{
+                width: 90px;
+                height: 100px;
+                border-radius: 100px;
+                background: #fff;
+                margin: 20px;
+                text-align: center;
+                font-size: 50px;
+                line-height: 100px;
+                font-family: sans-serif;
+                overflow: hidden;
+                box-shadow: 5px 10px 20px rgba(150, 150, 150, .3);
+                transition: all .3s ease-out;
+            }
+            .icon:hover{
+                width: 400px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                color: #fff;
+            }
+            .icon:hover i{
+                color: #fff;
+            }
+            .icon .fa-facebook-f{
+                color: #1A6ED8;
+            }
+            .fb:hover{
+                background: #1A6ED8;
+            }
+            .icon .fa-instagram{
+                color: #8a3ab9 ;
+                color: #4c68d7 ;
+                color: #cd486b ;
+                color: #fbad50 ;
+                color: #bc2a8d;
+                color: #e95950;
+
+            }
+            
+            .insta:hover{
+                background: #a14327;
+            }
+            .icon .fa-linkedin-in{
+                color: #0077B5;
+            }
+            .lnk:hover{
+                background: #0077B5;
+            }
+            .icon .fa-github{
+                color: #000;
+            }
+            .git:hover{
+                background: #000;
+            }
+            .icon .fa-youtube{
+                color: #FE0000;
+            }
+            .yt:hover{
+                background: #FE0000;
+            }
+
+        /* responsive */
+            @media only screen and (min-width: 320px) and (max-width: 991px) {
+                .socials{
+                    flex-direction: column;
+                }
+            }
+
+            .footer p {
+            font-size: 1.7rem;
+            color: var(--dark-gray);
+            margin-top: 3rem;
+            }
+        /* footer */
+
+
+
+        /* media queries */
+            @media (max-width: 1200px) {
+            .header {
+                padding: 3rem 2rem;
+            }
+
+            .header.active {
+                padding: 2rem;
+            }
+
+            section {
+                padding: 3rem 2rem;
+            }
+            }
+
+            @media (max-width: 991px) {
+            html {
+                font-size: 60%;
+            }
+            }
+
+            @media (max-width: 768px) {
+            .header .menu {
+                display: block;
+            }
+
+            .header .navbar {
+                position: fixed;
+                top: 6rem;
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transform: translateX(100%);
+            }
+
+            .header .navbar.show {
+                transform: translateX(0);
+            }
+
+            .header .navbar a {
+                color: var(--dark-bg);
+                margin: 0;
+                font-size: 2rem;
+                margin: 2rem 0;
+            }
+            }
+
+            @media (max-width: 450px) {
+            html {
+                font-size: 55%;
+            }
+
+            .home .hero-text {
+                font-size: 6rem;
+            }
+            }
+        /* media queries */
+
+            #element{
+                color: #814f29;
+            }
+
+            #et{
+                font-size: 50px;
+                color: #808080;
+            }
+
+
+    </style>
+
+
+
+  </head>
+  <body>
+    <!-- ion icons import -->
+
+        <!-- home section starts -->
+        <section class="home" id="home">
+            <h1 class="hero-text">
+                hello, i'm <br />
+                <span>Mohammed Riyan</span><br> 
+                <div>I'm a Passionate </div>
+            </h1> 
+            <h1 id="et">
+               
+                <span id="element"></span>
+            </h1>
+            <!--<p>this is my resume</p>-->
+        </section>
+    <!-- home section ends -->
+
+    <!-- header section starts -->
+        <header class="header">
+            <a><i class="menu material-icons"> menu </i></a>
+            <nav class="navbar">
+                <a href="#"> Home </a>
+                <a href="#resume"> Qualification </a>
+                <a href="#portfolio"> Project </a> 
+                <a href="#about"> About </a>
+                <a href="#contact"> Contact Me </a>
+            </nav>
+        </header>
+    <!-- header section ends -->
+
+    <!-- resume section starts -->
+    <section class="resume" id="resume">
+        <h1 class="heading"> My <span>Qualification</span></h1>
+        <div class="col-container">
+            <div class="col">
+                <center><h2> Education </h2></center>
+                <div class="box">
+                <span><i class="material-icons"> In </i>2018</span>
+                <h3>S.S.C </h3>
+                <p>
+                    I completed my 10th standard from F.D secondary school in Ahmeadabad,Gujarat,India.
+                </p>
+                <p class="university"> I clear 10th standard study with 62%</p>
+                </div>
+        
+                <div class="box">
+                <span><i class="material-icons"> In </i>2020</span>
+                <h3>H.S.C </h3>
+                <p>
+                    I completed my 12th standard Study in science stream form Ankur Higher secondary school in Ahmeadabad,Gujarat,India.
+                </p>
+                <p class="university">Clear my 12th standard study with 51%</p>
+                </div>
+        
+                <div class="box">
+                <span><i class="material-icons"> In </i> 2020 - 2024</span>
+                <h3>Bachelor of Engineering</h3>
+                <p>
+                    I'm pursuing bachelor of engineering in computer engineering from Silver Oak university in Ahmeadabad,Gujarat,India.
+                    <p>Rigth now i'm in 4th years student.</p>
+                </p>
+                <p class="university"> till 7th sem my CGPA : 8.34 </p>
+                </div>
+        
+            <!-- <div class="box">
+                <span><i class="material-icons"> calendar_today </i> Jan 2022 - present</span>
+                <h3>masters in computer science</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam ut perferendis quas
+                    tenetur adipisci sunt!
+                </p>
+                <p class="university">new york university</p>
+                </div>-->
+            </div>
+        </div>
+        </section>
+<!-- resume section ends -->
+
+<!-- Certificates section starts -->
+        <section class="blogs" id="blogs">
+            <h1 class="heading"> My <span>Certificates</span></h1>
+            <div class="box-container">
+                <div class="box">
+                    <div class="image">
+                         <img src="simp.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                        <h2>Python for Beginners at Simplilearn</h2>
+                        <p>
+                            I have completed <i><b> Python </b></i> basic course in online from Simplilearn App.<br>
+                            I have learned all the basic of <i><b>python programming language</b></i> like their syntax ,looping condition,recursive, function etc.<br>
+                            Now I have good knowledge of <b>Python</b>
+                        </p>
+                        <span><i class="material-icons"> calendar_today </i> June, 2022</span>
+                        <!--<span><i class="material-icons"> chat_bubble_outline </i> 5 comments</span>-->
+                    </div>
+                </div>
+            
+                <div class="box">
+                    <div class="image">
+                         <img src="images/post-2.jpeg" alt="" />
+                    </div>
+                    <div class="content">
+                        <h2>Python with Django at Elite Evince Tech</h2>
+                        <p>
+                            I have completed <i><b> Python with Django</b></i>  form Elite Evince Tech.<br>
+                            I have learned all the basic of <i><b>Python with Django</b></i> like their MVT(Model , Views, Template).<br>
+                            Now I have good knowledge of <b>Python with Django</b> in web development.
+                        </p>
+                        <span><i class="material-icons"> calendar_today </i> July, 2022</span>
+                        <!--<span><i class="material-icons"> chat_bubble_outline </i> 5 comments</span>-->
+                    </div>
+                </div>
+            
+                <div class="box">
+                    <div class="image">
+                         <img src="sty.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                        <h2>Data Science & Machine Learning at Stypix</h2>
+                        <p>
+                            I have completed <i><b> Data Science & Machine Learning </b></i>  form Stypix.<br>
+                            I have learned all the basic of <i><b>Data Science & Machine Learning</b></i> .<br>
+                            Now I have good knowledge of <b>Python with Django</b> in web development.
+                        </p>
+                        <span><i class="material-icons"> calendar_today </i> June, 2023</span>
+                        <!--<span><i class="material-icons"> chat_bubble_outline </i> 5 comments</span>-->
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- blogs section ends -->
+
+    <!--Project section starts -->
+        <section class="portfolio" id="portfolio">
+            <h1 class="heading"> My <span>Project</span></h1>
+        
+            <div class="box-container">
+            <div class="box">
+                <div class="image">
+                <img src="face_mask.png" alt="" />
+                <div class="content">
+                    <h2>Face Mask Detection</h2>
+                </div>
+                </div>
+            </div>
+        
+            <div class="box">
+                <div class="image">
+                <img src="Portfolio.png" alt="" />
+                <div class="content">
+                    <h2>Portfolio Website</h2>
+                </div>
+                </div>
+            </div>
+        
+            <div class="box">
+                <div class="image">
+                <img src="Mobile-Price-Prediction.png" alt="" />
+                <div class="content">
+                    <h2>Moblie Price Prediction</h2>
+                </div>
+                </div>
+            </div>
+        
+            <div class="box">
+                <div class="image">
+                <img src="Chat-box.png" alt="" />
+                <div class="content">
+                    <h2>Chat-Box</h2>
+                </div>
+                </div>
+            </div>
+        
+            <div class="box">
+                <div class="image">
+                <img src="p.jpg" alt="" />
+                <div class="content">
+                    <h2>Employee Management System</h2>
+                </div>
+                </div>
+            </div>
+        
+            <div class="box">
+                <div class="image">
+                <img src="Django.jpg" alt="" />
+                <div class="content">
+                    <h2>Drowsiness Detection</h2>
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    <!-- portfolio section ends -->
+
+
+
+
+    <!-- about section starts -->
+        <section class="about" id="about">
+            <div class="box-container">
+            <div class="box">
+                <div class="image">
+                <img src="p.jpg" alt="" />
+                </div>
+            </div>
+        
+            <div class="box">
+                <h1 class="heading">about <span>me</span></h1>
+                <p>
+                    I'm Mohammed Riyan and I'm from Ahmeadabad,a city in the state of Gujarat, India.
+                    I'm pursuing a Bachelor’s degree in Computer Science & Technology from Silver Oak University,
+                    I have learned many languages for example is <b>C language, Java language, Pyhton language, HTML, CSS , BOOTSTRAP, DJANGO & 
+                    Rigth now i'm learning a Machine learning.</b>
+                </p>
+
+                <!--<a href="#" class="btn">hire me</a>-->
+                <a href="#" class="btn">download cv</a>
+            </div>
+            </div>
+        </section>
+    <!-- about section ends -->
+
+
+
+
+    <!-- contact section starts -->
+        <section class="contact" id="contact">
+            <h1 class="heading">get <span>in touch</span></h1>
+            <div class="col-container">
+                <div class="col">
+                    <h2>get in touch</h2>
+                    <input type="text" placeholder="your name" />
+                    <input type="email" placeholder="your email" />
+                    <input type="text" placeholder="your phone" />
+                    <textarea name="" placeholder="write a message" id="" cols="30" rows="10"></textarea>
+                    <a href="#" class="btn">send message</a>
+                </div>
+            
+                <div class="col">
+                    <h2>my contact details</h2>
+                    <p>email</p>
+                    <span>shaikhrayyan2324@gmail.com</span>
+                    <br />
+                    <br />
+                    <p>phone</p>
+                    <span>+91 7984907462</span>
+                    <br />
+                    <br />
+                    <p>Whatsupp</p>
+                    <span>+91 79849074624</span>
+                    <br />
+                    <br />
+                    <p>address</p>
+                    <span>
+                    san francisco, CA <br />
+                    4th floor 8 lower <br />
+                    san francisco street, m1 50f
+                    </span>
+                </div>
+            </div>
+        </section>
+    <!-- contact section ends -->
+
+    <!-- footer section starts -->
+        <section class="footer" id="footer">
+            <div class="socials">
+                    <!-- Facebook Icon -->
+                <div class="icon fb">
+                    <a href='https://www.Facebook.com'><i class="fa-brands fa-facebook-f"></i></a>
+                    <span>Facebook</span>
+                </div>
+
+                <!-- Instagram Icon -->
+                <div class="icon insta">
+                    <a href='https://www.instagram.com/'><i class="fa-brands fa-instagram"></i></a>
+                    <span>Instagram</span>
+                </div>
+
+                <!-- Linkedin Icon -->
+                <div class="icon lnk">
+                    <a href="https://www.linkedin.com/in/mohammed-riyan-shaikh-5a1976214"><i class="fa-brands fa-linkedin-in"> </i></a>
+                    <span>Linkedin</span>
+                </div>
+
+                <!-- GitHub Icon -->
+                <div class="icon git">
+                    <a href='https://github.com/'><i class="fa-brands fa-github"></i></a>
+                    <span>GitHub</span>
+                </div>
+
+                <!-- YouTube Icon -->
+                <div class="icon yt">
+                    <a href='https://www.youtube.com'><i class="fa-brands fa-youtube"></i></a>
+                    <span>YouTube</span>
+                </div>
+            </div>
+            <p> 	&#169;Copyright - Mohammed Riyan </p>
+        </section>
+    <!-- footer section ends -->
+
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script>
+        var typed = new Typed('#element', {
+          strings: ['<i>Web </i> Developer ', 'in Python + Django','Video Editing','Content Creation',' and Gaming.'],
+          typeSpeed: 80,
+        });
+    </script>
+
+
+
+        <script>
+
+            document.onscroll = () => {
+            if (window.scrollY > 0) {
+                document.querySelector('.header').classList.add('active');
+            } else {
+                document.querySelector('.header').classList.remove('active');
+            }
+            };
+
+            document.onload = () => {
+            if (window.scrollY > 0) {
+                document.querySelector('.header').classList.add('active');
+            } else {
+                document.querySelector('.header').classList.remove('active');
+            }
+            };
+
+
+
+            const navbar = document.querySelector('.header .navbar');
+            const menuButton = document.querySelector('.header .menu');
+
+            menuButton.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+            });
+
+            document.onscroll = () => {
+            navbar.classList.remove('show');
+
+            if (window.scrollY > 0) {
+                document.querySelector('.header').classList.add('active');
+            } else {
+                document.querySelector('.header').classList.remove('active');
+            }
+            };
+
+            document.onload = () => {
+            if (window.scrollY > 0) {
+                document.querySelector('.header').classList.add('active');
+            } else {
+                document.querySelector('.header').classList.remove('active');
+            }
+            };
+
+        </script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- local js file -->
+    <script src="script.js"></script>
+  </body>
+</html>
